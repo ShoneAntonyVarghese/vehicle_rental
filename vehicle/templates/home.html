@@ -1,0 +1,44 @@
+
+
+{% block content %}
+<div class="container-fluid position-relative p-5 text-white" id="background-image">
+    <h1>Welcome to the Car Rental System</h1>
+    <p>Manage your rentals easily from here:</p>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"> 
+    <div class="row mt-4 justify-content-center">
+        <!-- Link to Book Vehicle -->
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Book a Vehicle</h5>
+                    <p class="card-text">Browse our selection of vehicles and make your reservation.</p>
+                    <a href="{% url 'book_vehicle' %}" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Link to View Rentals -->
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Your Rentals</h5>
+                    <p class="card-text">Track your rental history, ongoing rentals, and rental durations.</p>
+                    <a href="{% url 'rentals' %}" class="btn btn-secondary">View Rentals</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Link to Manage Payments -->
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Make a Payment</h5>
+                    <p class="card-text">View and manage your payments for your rentals.</p>
+                    <a href="{% url 'process_payment' vehicle_id=1 %}" class="btn btn-success">Make Payment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+body {
+    background-color: #f8f9fa; /* Light background for contrast */
+    font-family: 'Arial', sans-serif;
+}
+
+h2 {
+    color: #343a40; /* Dark color for headings */
+    font-weight: bold;
+}
+
+.card {
+    border: none; /* Remove default border */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
+}
+
+.card-img-top {
+    border-top-left-radius: 0.5rem; /* Rounded corners for images */
+    border-top-right-radius: 0.5rem;
+}
+
+.card-title {
+    color: #007bff; /* Bootstrap primary color for titles */
+    font-size: 1.25rem; /* Increase font size for better visibility */
+}
+
+.card-text {
+    color: #6c757d; /* Muted color for text */
+    margin-bottom: 1.5rem; /* Spacing below text */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Primary button color */
+    border-color: #007bff; /* Match border color */
+    font-weight: bold; /* Bold text for buttons */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    border-color: #004085; /* Darker border on hover */
+}
+
+.w-100 {
+    width: 100%; /* Full width buttons */
+}

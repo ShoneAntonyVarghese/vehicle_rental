@@ -1,0 +1,24 @@
+
+
+{% block content %}
+<h2 class="text-center mb-4">Book a Vehicle</h2>
+<div class="row">
+    {% for vehicle in vehicles %}
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-lg border-0 rounded">
+            {%load static%}
+            <img src="{% static 'tes.jpg' %}" class="card-img-top" alt="Car image" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title">{{ vehicle.make }} {{ vehicle.model }}</h5>
+                <p class="card-text"><strong>Year:</strong> {{ vehicle.year }}</p>
+                <p class="card-text"><strong>Daily Rate:</strong> ${{ vehicle.daily_rental_rate }}</p>
+                <form action="{% url 'process_payment' vehicle.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary w-100">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

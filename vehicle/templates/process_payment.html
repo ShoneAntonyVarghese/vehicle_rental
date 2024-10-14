@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Payment for {{ vehicle.make }} {{ vehicle.model }}</h2>
+<p>Daily Rate: ${{ vehicle.daily_rental_rate }}</p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="payment_method">Payment Method</label>
+        <select id="payment_method" name="payment_method" class="form-control">
+            <option value="Credit Card">Credit Card</option>
+            <option value="PayPal">PayPal</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success">Confirm Payment</button>
+</form>
+{% endblock %}

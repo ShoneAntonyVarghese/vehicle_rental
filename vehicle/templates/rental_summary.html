@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Rental Summary for {{ rental.vehicle.make }} {{ rental.vehicle.model }}</h2>
+<p>Rented On: {{ rental.rental_date }}</p>
+{% if rental.return_date %}
+    <p>Returned On: {{ rental.return_date }}</p>
+    <p>Total Cost: ${{ rental.total_cost }}</p>
+{% else %}
+    <p>This vehicle is currently rented.</p>
+{% endif %}
+<a href="{% url 'rentals' %}" class="btn btn-primary">View All Rentals</a>
+{% endblock %}
